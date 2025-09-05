@@ -7,10 +7,37 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
+      text-align: center;
     }
-    /* áudio oculto */
-    #background-audio {
-      display: none;
+
+    #playBtn {
+      font-size: 32px;
+      font-weight: bold;
+      padding: 20px 40px;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      margin: 30px 0;
+      transition: transform 0.2s;
+    }
+
+    #playBtn:hover {
+      transform: scale(1.1);
+    }
+
+    audio {
+      display: none; /* áudio oculto */
+    }
+
+    a {
+      color: #0f172a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -22,7 +49,6 @@
   <h2>Crio sistemas inovadores, apaixonantes e tecnológicos como esse que você está olhando</h2>
   <br>
   <h3>Minhas redes</h3>
-  
   <p>
     <a href="https://github.com/MarlonJerold" target="_blank">GitHub</a> |
     <a href="https://www.linkedin.com/in/marlon-jerold/" target="_blank">LinkedIn</a>
@@ -37,8 +63,8 @@
   </p>
 
   <br><br>
-  <h2>Trilha sonora</h2>
-  <!-- Áudio oculto -->
+
+  <button id="playBtn">NÃO CLIQUE</button>
   <audio id="background-audio" loop>
     <source src="musica.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
@@ -48,11 +74,14 @@
   <p>Frase motivacional: o esforço vence o talento natural.</p>
 
   <script>
-    window.addEventListener('load', () => {
-      const audio = document.getElementById('background-audio');
+    const btn = document.getElementById('playBtn');
+    const audio = document.getElementById('background-audio');
+
+    btn.addEventListener('click', () => {
       audio.play().catch(() => {
-        console.log('Autoplay bloqueado pelo navegador, interação necessária.');
+        console.log('O navegador bloqueou autoplay. Clique novamente.');
       });
+      btn.style.display = 'none'; 
     });
   </script>
 </body>
