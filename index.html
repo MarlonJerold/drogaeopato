@@ -87,21 +87,6 @@
             color: #000000;
         }
 
-        .button {
-            background-color: #dc2626;
-            color: #ffffff;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-            font-family: inherit;
-        }
-
-        .button:hover {
-            opacity: 0.8;
-        }
-
         .quote {
             color: #666666;
             font-size: 0.875rem;
@@ -170,9 +155,7 @@
         </div>
 
         <div class="section">
-            <button id="playBtn" class="button">
-                NÃO CLIQUE
-            </button>
+            <span id="duckEmoji" style="font-size: 3rem; cursor: pointer;">🦆</span>
             
             <audio id="backgroundAudio" loop>
                 <source src="musica.mp3" type="audio/mpeg">
@@ -189,17 +172,17 @@
     </div>
 
     <script>
-        const btn = document.getElementById('playBtn');
+        const duck = document.getElementById('duckEmoji');
         const audio = document.getElementById('backgroundAudio');
 
-        btn.addEventListener('click', () => {
+        duck.addEventListener('click', () => {
             audio.play()
                 .then(() => {
-                    btn.classList.add('hidden');
+                    duck.classList.add('hidden');
                 })
                 .catch((error) => {
                     console.log('Erro ao reproduzir áudio:', error);
-                    btn.classList.add('hidden');
+                    duck.classList.add('hidden');
                 });
         });
     </script>
