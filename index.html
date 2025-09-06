@@ -1,88 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Droga é o pato</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droga é o Pato - Backend Developer</title>
+    <meta name="description" content="Backend Developer especializado em Java, Typescript, PostgreSQL e AWS. Criando sistemas inovadores e tecnológicos.">
+    <meta name="author" content="Droga é o Pato">
+    
+    <meta property="og:title" content="Droga é o Pato - Backend Developer">
+    <meta property="og:description" content="Backend Developer especializado em Java, Typescript, PostgreSQL e AWS. Criando sistemas inovadores e tecnológicos.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    #playBtn {
-      font-size: 32px;
-      font-weight: bold;
-      padding: 20px 40px;
-      background-color: #ff0000;
-      color: #fff;
-      border: none;
-      border-radius: 16px;
-      cursor: pointer;
-      margin: 30px 0;
-      transition: transform 0.2s;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 300;
+            background-color: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
 
-    #playBtn:hover {
-      transform: scale(1.1);
-    }
+        .container {
+            max-width: 512px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    audio {
-      display: none; /* áudio oculto */
-    }
+        .section {
+            margin-bottom: 64px;
+        }
 
-    a {
-      color: #0f172a;
-      text-decoration: none;
-    }
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 16px;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .subtitle {
+            color: #666666;
+            font-size: 1rem;
+        }
+
+        .description {
+            color: #000000;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .links a {
+            color: #000000;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s ease;
+        }
+
+        .links a:hover {
+            color: #666666;
+        }
+
+        .certification {
+            color: #666666;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .certification:hover {
+            color: #000000;
+        }
+
+        .button {
+            background-color: #dc2626;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            font-family: inherit;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        .quote {
+            color: #666666;
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.875rem;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>DROGA É O PATO</h1>
-  <p>Backend Developer | Java | Typescript | PostgreSQL | AWS</p>
+    <div class="container">
+        
+        <div class="section">
+            <h1>Senhor Patolino</h1>
+            <p class="subtitle">Backend Developer</p>
+        </div>
 
-  <br><br>
-  <h2>Crio sistemas inovadores, apaixonantes e tecnológicos como esse que você está olhando</h2>
-  <br>
-  <h3>Minhas redes</h3>
-  <p>
-    <a href="https://github.com/MarlonJerold" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/marlon-jerold/" target="_blank">LinkedIn</a>
-  </p>
-  <br>
+        <div class="section">
+            <p class="description">
+                Crio sistemas inovadores, apaixonantes e tecnológicos
+            </p>
+        </div>
 
-  <h2>Olhe meu emblema :)</h2>
-  <p>
-    <a href="https://www.credly.com/badges/36e15874-a0a9-4c04-9073-bb573a367a8e/linked_in_profile" target="_blank">
-      AWS Certified Cloud Practitioner
-    </a>
-  </p>
+        <div class="section">
+            <div class="links">
+                <a href="https://github.com/MarlonJerold" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/marlon-jerold/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+            
+            <div style="margin-top: 16px;">
+                <a href="https://www.credly.com/badges/36e15874-a0a9-4c04-9073-bb573a367a8e/linked_in_profile" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="certification">
+                    AWS Certified Cloud Practitioner
+                </a>
+            </div>
+        </div>
 
-  <br><br>
+        <div class="section">
+            <button id="playBtn" class="button">
+                NÃO CLIQUE
+            </button>
+            
+            <audio id="backgroundAudio" loop>
+                <source src="musica.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
 
-  <button id="playBtn">NÃO CLIQUE</button>
-  <audio id="background-audio" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
+        <div class="section">
+            <p class="quote">
+                O esforço vence o talento natural.
+            </p>
+        </div>
 
-  <br><br>
-  <p>Frase motivacional: o esforço vence o talento natural.</p>
+    </div>
 
-  <script>
-    const btn = document.getElementById('playBtn');
-    const audio = document.getElementById('background-audio');
+    <script>
+        const btn = document.getElementById('playBtn');
+        const audio = document.getElementById('backgroundAudio');
 
-    btn.addEventListener('click', () => {
-      audio.play().catch(() => {
-        console.log('O navegador bloqueou autoplay. Clique novamente.');
-      });
-      btn.style.display = 'none'; 
-    });
-  </script>
+        btn.addEventListener('click', () => {
+            audio.play()
+                .then(() => {
+                    btn.classList.add('hidden');
+                })
+                .catch((error) => {
+                    console.log('Erro ao reproduzir áudio:', error);
+                    btn.classList.add('hidden');
+                });
+        });
+    </script>
 </body>
 </html>
